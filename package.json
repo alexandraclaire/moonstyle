@@ -1,0 +1,40 @@
+{
+  "name": "alexdunham",
+  "version": "1.0.0",
+  "description": "alexandradunham.com",
+  "main": "custom.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "author": "Alexandra Dunham",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-install": "^0.6.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-install": "^0.6.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandraclaire/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "web"
+  ],
+  "bugs": {
+    "url": "https://github.com/alexandraclaire/portfolio/issues"
+  },
+  "homepage": "https://github.com/alexandraclaire/portfolio#readme"
+}
