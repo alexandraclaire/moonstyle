@@ -69,6 +69,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction:column;
 }
 
 /*home*/
@@ -77,7 +78,6 @@ section {
 	position:relative;
 }
 section h2 {
-	padding-left:1em;
 	padding-top:1em;
 }
 section#home h2 {
