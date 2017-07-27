@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Homemade+Apple|Montserrat:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="assets/plugins/slick/slick.css">
+    <link rel="stylesheet" href="assets/plugins/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <title>Alexandra Dunham</title>
+</head>
+<body class="home" id="app">
+  <div class="navbar" v-show="clicked == 0">
+    <div class="navbar-brand">
+      <div class="logo"></div>
+    </div>
+  </div>
+  <section id="home">
+     <div class="jumbotron">
+        <h2 class="text-center">developer with a design mind</h2>
+      </div>
+  </section>
+  <div class="slider-wrap">
+     <div class="closeButton" @click="fullScreenClose()"><i class="fa fa-times" aria-hidden="true"></i></div>
+    <div class="slider">
+      <div class="slides" v-for="portfolio in portfolio">
+        <div class="slide-wrap circle" @click="fullScreenOpen($index)"  v-bind:style='{backgroundImage:"url("+ portfolio.mainImage +")", backgroundSize:"cover"}' v-bind:class="{'slide-inner': fullScreen == true}" >
+        </div>
+        <div v-show="fullScreen == true" class="slide-content-wrap">
+         
+            <div class="slide-description">
+              <div class="split">
+                <div class="project-description left">
+                  <h4 class="bold-title">{{portfolio.name}}</h4>
+                  <p class="remove-padding">{{portfolio.byline}}</p>
+                </div>
+                <div class="project-scope">
+                  <ul>
+                    <li v-for="scope in portfolio.scope">{{scope}}</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="project-journey">
+                <div class="project-images" v-for="image in portfolio.images">
+                  <img v-bind:src="image.link">
+                  <p>{{image.caption}}</p>
+                </div>
+              </div>
+            
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+ 
+
+  
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="assets/js/vue.js"></script>
+
+
+  <script type="text/javascript" src="assets/plugins/slick/slick.min.js"></script>
+
+  <script src="assets/js/typed.js"></script>
+
+  <script src="assets/js/custom.js"></script>
+
+
+</body>
+</html>
