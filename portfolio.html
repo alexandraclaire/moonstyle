@@ -17,17 +17,18 @@
 <body class="home" id="app">
   <div class="navbar" v-show="clicked == 0">
     <div class="navbar-brand">
-      <div class="logo"></div>
+      <div class="logo"><h1 class="name-logo">Alex<br>Dunham</h1></div>
     </div>
   </div>
   <section id="home">
      <div class="jumbotron">
+        <p class="jumbo-header">I AM:</p>
         <h2 class="text-center">front end developer</h2>
         <h2 class="text-center">design minded</h2>
         <h2 class="text-center">barrel of laughs</h2>
       </div>
   </section>
-  <div class="slider-wrap">
+  <section class="slider-wrap" id="slider-section">
      <div class="closeButton" @click="fullScreenClose()"><i class="fa fa-times" aria-hidden="true"></i></div>
     <div class="slider">
       <div class="slides" v-for="portfolio in portfolio">
@@ -58,10 +59,52 @@
         </div>
       </div>
     </div>
+  </section>
+  <section id="about">
+    <p class="jumbo-header">Hi there.</p>
+    <p>My name is Alex, and I like to make sweet websites.</p>
+    <p>I thrill at the thought of code, and I regularly dream in javascript.</p>
+    <p>When I'm not imagining the world in dev terms (some gems have been 'debugging the toaster', and wanting to 'command+f' to find my lost socks) I like to watch period dramas, make jewellery, and look at pictures of puppies.</p>
 
+    <a class="resume-link">See my resume here</a>
+ <!--    <div class="split">
+      <div class="left">
+        <p class="skills-lists">Things I'm great at:</p>
 
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>SASS</li>
+          <li>Javascript & Jquery</li>
+          <li>Vue.js</li>
+          <li>Bootstrap</li>
+          <li>Git version control</li>
+          <li>Wordpress</li>
+        </ul>
+      </div>
+      <div class="left">        
+        <p class="skills-lists">Other stuff you'll love about me:</p>
 
-  </div>
+        <ul>
+          <li>I earned myself the office nickname of 'Drag [and drop] Queen' for my interaction skills</li>
+          <li>I can pick up new languages and technology quickly (so far these have included Silverstripe, Laravel/Blade, and Shopify/Liquid)</li>
+          <li>I'm skilled at creating mobile first, responsive sites from PSD mockups</li>
+          <li>I write clean, validated code according to industry best practices</li>
+          <li>I have never once missed a deadline</li>
+          <li>I have a working knowledge of PHP</li>
+        </ul>
+      </div>
+      
+
+    </div> -->
+
+    
+  </section>
+  <section id="contact">
+    <p class="jumbo-header">Let's talk.</p>
+    <p>e: <a href="mailto:alexandracdunham@gmail.com">alexandracdunham@gmail.com</a> </p>
+     <p>p: <a href="tel:0210648037">021 064 8037</a> </p>
+  </section>
  
 
   

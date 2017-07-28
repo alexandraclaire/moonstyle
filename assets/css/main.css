@@ -2,7 +2,7 @@ p, li, a {
   font-family: "Montserrat", sans-serif; }
 
 h1, h2, h3 {
-  font-family: "Abril Fatface", cursive; }
+  font-family: "Montserrat", sans-serif; }
 
 h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
@@ -12,6 +12,12 @@ h4, h5, h6 {
   font-family: "Homemade Apple", cursive;
   color: white;
   font-size: 50px; }
+
+.name-logo {
+  font-family: "Homemade Apple", cursive;
+  margin-left: 15px;
+  font-size: 22px;
+  padding-top: 20px; }
 
 body {
   background: linear-gradient(to bottom, rgba(255, 216, 238, 0.3), rgba(199, 249, 246, 0.6));
@@ -38,7 +44,8 @@ body {
   width: 100px;
   height: 100px;
   margin-left: 20px;
-  margin-top: 15px; }
+  margin-top: 15px;
+  padding-top: 0; }
 
 .logo {
   background: white;
@@ -58,13 +65,12 @@ body {
   height: calc(100vh - 120px);
   margin-top: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column; }
 
 /*home*/
 section {
-  height: 100vh;
+  min-height: 100vh;
   position: relative; }
 
 section h2 {
@@ -73,7 +79,7 @@ section h2 {
 section#home h2 {
   padding-top: 0; }
 
-section#home, #contact {
+section#home, #contact, #about {
   display: flex;
   width: 100%;
   height: calc(100vh - 100px);
@@ -92,6 +98,9 @@ section#home, #contact {
   font-size: 20px;
   color: black;
   text-align: center; }
+
+.jumbo-header {
+  font-size: 70px !important; }
 
 .half-width {
   width: 70%;
@@ -162,19 +171,11 @@ section a:hover {
   color: black;
   padding: 2.5em 1.5em; }
 
-.slider-wrap {
-  height: calc(100vh - 100px); }
-
 .fixed-slider {
   min-height: 100vh;
   width: 100vw;
-  position: fixed;
-  top: 0;
-  overflow-y: scroll;
+  overflow-y: hidden;
   z-index: 100; }
-
-.slide-content-wrap {
-  background: linear-gradient(to bottom, rgba(255, 216, 238, 0.3), rgba(199, 249, 246, 0.6)); }
 
 /*.slide-wrap.circle.slide-inner:before {
     content: '';
@@ -234,10 +235,36 @@ h4.project-outline {
   right: 10px !important;
   z-index: 90000; }
 
+.slider-wrap {
+  height: 500px; }
+
+/*about*/
+section#about p, section#about a {
+  width: 80%;
+  padding-left: 20px; }
+
+p.skills-lists {
+  padding-top: 20px;
+  padding-bottom: 10px; }
+
+.resume-link {
+  padding-top: 2em;
+  text-align: left; }
+
+/*contact*/
+#contact p {
+  font-size: 20px; }
+
+@media screen and (min-height: 500px) {
+  .slider-wrap {
+    height: calc(100vh - 100px); } }
+
 @media screen and (min-width: 800px) {
   .split {
     display: flex;
     min-height: 200px; }
+  section#about p, section#about a {
+    width: 60%; }
   .left {
     width: 50%; }
   .slick-prev {
