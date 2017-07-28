@@ -83,11 +83,12 @@ new Vue({
         this.showMe = showMeNumber;
         $('.slick-prev, .slick-next').addClass('hidden');
         $('.slider-wrap').addClass('fixed-slider');
+        $('.slider').addClass('hAuto');
         setTimeout(function(){
           var height = $('.slick-current').height();
           $('.fixed-slider').css('height', height);
           }, 1);
-        $('#home, #about, #contact').hide();
+        $('#home, #about, #contact, .prompt').hide();
         $(window).scrollTop(0);
       }
     },
@@ -97,15 +98,16 @@ new Vue({
         this.fullScreen = false;
         this.clicked = 0;
         this.showMe = 0;
+        $('.slider').removeClass('hAuto');
         setTimeout(function(){
           var height = $('.slick-current').height();
           $('.slider-wrap').css('height', height);
           }, 1);
          $('.slick-prev, .slick-next').removeClass('hidden');
          $('.slider-wrap').removeClass('fixed-slider');
-         $('#home, #about, #contact').show();
+         $('#home, #about, #contact, .prompt').show();
          container.scrollTop(
-            scrollTo.offset().top - container.offset().top - 100
+            scrollTo.offset().top - container.offset().top + container.scrollTop()
         );
     }
   },
