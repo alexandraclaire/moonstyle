@@ -26,6 +26,7 @@ new Vue({
     fullScreen:false,
     clicked:0,
     showMe: 0,
+    showItem: [{}],
     navShow: false,
     portfolio: [
       {
@@ -129,22 +130,25 @@ new Vue({
     
   },
   methods: {
-    fullScreenOpen: function(showMeNumber) {  
+    fullScreenOpen: function(portfolio) {  
       var self = this;  
-      if(this.clicked == 0) {
-        this.fullScreen = true;
-        this.clicked = 1;
-        this.showMe = showMeNumber;
-        $(".slick-prev, .slick-next").addClass("hidden");
-        $(".slider-wrap").addClass("fixed-slider");
-        $(".slider").addClass("hAuto");
-        setTimeout(function(){
-          var height = $(".slick-current").height();
-          $(".fixed-slider").css("height", height);
-          }, 1);
-        $("#home, #about, #contact, .prompt, .nav-mobile").hide();
-        $(window).scrollTop(0);
-      }
+      self.showItem = portfolio;
+      self.fullScreen = true;
+       $(window).scrollTop(0);
+      // if(this.clicked == 0) {
+      //   this.fullScreen = true;
+      //   this.clicked = 1;
+      //   this.showMe = showMeNumber;
+      //   // $(".slick-prev, .slick-next").addClass("hidden");
+      //   // $(".slider-wrap").addClass("fixed-slider");
+      //   // $(".slider").addClass("hAuto");
+      //   // setTimeout(function(){
+      //   //   var height = $(".slick-current").height();
+      //   //   $(".fixed-slider").css("height", height);
+      //   //   }, 1);
+      //   // $("#home, #about, #contact, .prompt, .nav-mobile").hide();
+      //   //
+      // }
     },
     fullScreenClose: function() { 
         var container = $("#app"),
@@ -191,13 +195,14 @@ new Vue({
 
     // });
 
-    setTimeout(function(){
-      $(".slider").slick({
-        arrows: true,
-        swipe: false
-      });
-      $(".slider").slick("slickGoTo", 0)
-    },1)
+    // setTimeout(function(){
+    //   $(".slider").slick({
+    //     arrows: true,
+    //     swipe: false, 
+
+    //   });
+    //   $(".slider").slick("slickGoTo", 0)
+    // },1)
 
     
 

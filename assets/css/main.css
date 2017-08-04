@@ -89,7 +89,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   position: fixed;
   top: 0;
   padding-top: 40px;
@@ -296,12 +296,50 @@ h4.project-outline {
   left: 10px !important;
   z-index: 90000; }
 
+.slider-wrap {
+  position: absolute;
+  top: 0px;
+  background: white;
+  z-index: 99999999;
+  width: 100%; }
+
 .slick-next {
   right: 10px !important;
   z-index: 90000; }
 
-.slider-wrap {
-  height: 500px; }
+.slide-wrap.slider-inner {
+  width: 100%;
+  height: 400px; }
+
+.project-journey {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.project-images {
+  display: flex;
+  flex-direction: column; }
+
+/*portfolio2*/
+h2 {
+  font-size: 40px; }
+
+.portfolio-item {
+  width: 45%;
+  height: 300px;
+  background-position: center center;
+  margin-bottom: 50px; }
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 50px; }
+
+.wrapper {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; }
 
 /*about*/
 section#about p, section#about a {
@@ -320,28 +358,16 @@ p.skills-lists {
 #contact p {
   font-size: 20px; }
 
-@media screen and (min-height: 500px) {
-  .slider-wrap {
-    height: 100vh; } }
+/*footer*/
+footer {
+  padding: 20px; }
 
-/*@media screen and (min-width:600px) {
-  .nav-mobile {
-        display:none;
-    } 
-    .prompt {
-        display:flex;
-    } 
+.footer-inner a {
+  width: 50%; }
 
-}*/
-/*@media screen and (max-height:600px) and (max-width:1200px){  
-    .nav-mobile {
-        display:block;
-    }
-    .prompt {
-        display:none;
-    }
+.footer-inner {
+  display: flex; }
 
-}*/
 @media screen and (min-width: 800px) {
   .split {
     display: flex;

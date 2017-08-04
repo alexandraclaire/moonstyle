@@ -15,55 +15,44 @@
   <div class="nav-mobile">
     <i class="fa fa-bars" aria-hidden="true" @click="navMob()"></i>
     <div class="nav-list" v-show="navShow == true">
-        <a href="#about" @click="navShow = false">About</a>
-        <a href="#slider-section" @click="navShow = false">Portfolio</a>
-        <a href="#contact" @click="navShow = false">Contact</a>
+       <a href="about.html" @click="navShow = false">About</a>
+        <a href="portfolio.html" @click="navShow = false">Portfolio</a>
+        <a href="contact.html" @click="navShow = false">Contact</a>
     </div>
   </div>
+  <div class="wrapper">
+    <h2>Work.</h2>
 
-  <section id="home">
-     <div class="jumbotron">
-      <h1 class="name">Alexandra Dunham</h1>
-      <p class="title">Front end developer</p>
-      
+  <div class="portfolio">
 
-        <!-- <div class="prompt">
-        <a href="#slider-section" class="text-center">See my work</a>
-      </div> -->
-      </div>
-  </section>
-    <section id="about">
-    <p class="jumbo-header">Hi there.</p>
-    <p>My name is Alex, and I like to make sweet websites.</p>
-    <p>I regularly dream in javascript, I've never once missed a deadline, and I love my work.</p>
-    <p>When I'm not imagining the world in dev terms (a recent gem was 'debugging the toaster') I like to watch period dramas, make jewellery, and look at pictures of puppies.</p>
+    <div class="portfolio-item" v-for="portfolio in portfolio" v-bind:style='{backgroundImage:"url("+ portfolio.mainImage +")", backgroundSize:"cover"}' @click="fullScreenOpen(portfolio)"></div>
 
-    <a class="resume-link">See my resume here</a>
-    
-  </section>
-  <section class="slider-wrap" id="slider-section">
+  </div>
+  </div>
+  
+
+
+  <section class="slider-wrap" id="slider-section" v-show="fullScreen == true"> 
      <div class="closeButton" @click="fullScreenClose()"><i class="fa fa-times" aria-hidden="true"></i></div>
-    <div class="slider">
-      <div class="slides" v-for="portfolio in portfolio">
-        <div class="slide-wrap circle" @click="fullScreenOpen($index)"  v-bind:style='{backgroundImage:"url("+ portfolio.mainImage +")", backgroundSize:"cover"}' v-bind:class="{'slide-inner': fullScreen == true}" >
+        <div class="slide-wrap slider-inner" v-bind:style='{backgroundImage:"url("+ showItem.mainImage +")", backgroundSize:"cover"}' >
         </div>
-        <div v-show="fullScreen == true" class="slide-content-wrap">
+        <div  class="slide-content-wrap">
          
             <div class="slide-description">
               <div class="split">
                 <div class="project-description left">
-                  <h4 class="bold-title">{{portfolio.name}}</h4>
-                  <p class="remove-padding">{{portfolio.byline}}</p>
+                  <h4 class="bold-title">{{showItem.name}}</h4>
+                  <p class="remove-padding">{{showItem.byline}}</p>
                 </div>
                 <div class="project-scope">
                   <p class="bold">Project Summary:</p>
                   <ul>
-                    <li v-for="scope in portfolio.scope">{{scope}}</li>
+                    <li v-for="scope in showItem.scope">{{scope}}</li>
                   </ul>
                 </div>
               </div>
               <div class="project-journey">
-                <div class="project-images" v-for="image in portfolio.images">
+                <div class="project-images" v-for="image in showItem.images">
                   <img v-bind:src="image.link">
                   <p>{{image.caption}}</p>
                 </div>
@@ -71,24 +60,20 @@
             
             </div>
         </div>
-      </div>
-    </div>
-    <!-- <div class="prompt">
-      <a href="#about" class="text-center">Who am I?</a>
-    </div> -->
 
   </section>
-
-  <section id="contact">
-    <p class="jumbo-header">Let's talk.</p>
-    <p>e: <a href="mailto:alexandracdunham@gmail.com">alexandracdunham@gmail.com</a> </p>
-     <p>p: <a href="tel:0210648037">021 064 8037</a> </p>
-
-     <div class="prompt">
-      <a href="#home" class="text-center">Back to top</a>
+  <div class="wrapper">
+    <footer>
+    <h4>Contact.</h4>
+    <div class="footer-inner">
+          <a href="mailto:alexandracdunham@gmail.com">e: alexandracdunham@gmail.com</a>
+           <a href="tel:0064210648037">p: 0210648037</a>
     </div>
-  </section>
- 
+
+  </footer>
+  </div>
+  
+  
 
   
 
