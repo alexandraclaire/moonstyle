@@ -134,39 +134,15 @@ new Vue({
       var self = this;  
       self.showItem = portfolio;
       self.fullScreen = true;
-       $(window).scrollTop(0);
-      // if(this.clicked == 0) {
-      //   this.fullScreen = true;
-      //   this.clicked = 1;
-      //   this.showMe = showMeNumber;
-      //   // $(".slick-prev, .slick-next").addClass("hidden");
-      //   // $(".slider-wrap").addClass("fixed-slider");
-      //   // $(".slider").addClass("hAuto");
-      //   // setTimeout(function(){
-      //   //   var height = $(".slick-current").height();
-      //   //   $(".fixed-slider").css("height", height);
-      //   //   }, 1);
-      //   // $("#home, #about, #contact, .prompt, .nav-mobile").hide();
-      //   //
-      // }
+      $(window).scrollTop(0);
+      $('body').addClass('popup-fixed');
+
     },
     fullScreenClose: function() { 
-        var container = $("#app"),
-        scrollTo = $("#slider-section");
-        this.fullScreen = false;
-        this.clicked = 0;
-        this.showMe = 0;
-        $(".slider").removeClass("hAuto");
-        setTimeout(function(){
-          var height = $(".slick-current").height();
-          $(".slider-wrap").css("height", height);
-          }, 1);
-         $(".slick-prev, .slick-next").removeClass("hidden");
-         $(".slider-wrap").removeClass("fixed-slider");
-         $("#home, #about, #contact, .prompt, .nav-mobile").show();
-         container.scrollTop(
-            scrollTo.offset().top - container.offset().top + container.scrollTop()
-        );
+      $('body').removeClass('popup-fixed');
+      var self = this;
+      self.fullScreen = false;
+      self.showItem = [{}];
     },
     navMob: function() {
       if(this.navShow == true) {

@@ -12,12 +12,18 @@
   <title>Alexandra Dunham</title>
 </head>
 <body class="home" id="app">
-  <div class="nav-mobile">
-    <i class="fa fa-bars" aria-hidden="true" @click="navMob()"></i>
-    <div class="nav-list" v-show="navShow == true">
-       <a href="about.html" @click="navShow = false">About</a>
-        <a href="portfolio.html" @click="navShow = false">Portfolio</a>
-        <a href="contact.html" @click="navShow = false">Contact</a>
+  <div class="nav-wrapper">
+    <div class="nav-brand">
+      <h1 class="logo-name">
+        <a href="index.html">
+          <span class="alex">Alex</span>
+          <span class="dunham">Dunham.</span>
+        </a>
+      </h1>
+    </div>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="portfolio.html" class="active">Work</a>
     </div>
   </div>
   <div class="wrapper">
@@ -25,14 +31,17 @@
 
   <div class="portfolio">
 
-    <div class="portfolio-item" v-for="portfolio in portfolio" v-bind:style='{backgroundImage:"url("+ portfolio.mainImage +")", backgroundSize:"cover"}' @click="fullScreenOpen(portfolio)"></div>
+    <div class="portfolio-item" v-for="portfolio in portfolio" v-bind:style='{backgroundImage:"url("+ portfolio.mainImage +")", backgroundSize:"cover"}' @click="fullScreenOpen(portfolio)">
+      <div class="hover-item">
+        <button @click="fullScreenOpen(portfolio)">See more</button>
+      </div>
+    </div>
 
   </div>
   </div>
   
-
-
-  <section class="slider-wrap" id="slider-section" v-show="fullScreen == true"> 
+  <div class="popup-back" v-show="fullScreen == true">
+      <div class="slider-wrap" id="slider-section" > 
      <div class="closeButton" @click="fullScreenClose()"><i class="fa fa-times" aria-hidden="true"></i></div>
         <div class="slide-wrap slider-inner" v-bind:style='{backgroundImage:"url("+ showItem.mainImage +")", backgroundSize:"cover"}' >
         </div>
@@ -61,7 +70,11 @@
             </div>
         </div>
 
-  </section>
+  </div>
+  </div>
+
+
+
   <div class="wrapper">
     <footer>
     <h4>Contact.</h4>
