@@ -16,8 +16,6 @@ a {
     text-decoration: none;
     color:black !important;
 }
-
-
 h1.logo-name {
     border-top: 3px solid black;
     border-bottom: 3px solid black;
@@ -28,13 +26,11 @@ h1.logo-name {
     font-size: 30px;
     margin-top:0;
 }
-
 body {
 	background: linear-gradient(to bottom, rgba(255, 216, 238,0.3), rgba(199, 249, 246,0.6));
 	margin:0;
 	min-height:100vh;
 }
-
 /*navbar*/
 .nav-wrapper {
     display:flex;
@@ -51,8 +47,7 @@ body {
     padding-bottom: 20px;
     font-size: 18px;
 }
-
-.nav-links a:hover {
+a:not(.nav-brand-link):hover {
     text-decoration: underline;
 }
 a.active {font-weight: 600;}
@@ -79,6 +74,21 @@ h1.logo-name.big {
 .blurb p {
     font-size: 30px;
     margin: 15px;
+}
+/*transitions*/
+.expand-transition {
+  transition: all 0.3s ease-in-out;
+  height: 30px;
+  padding: 10px;
+  background-color: #eee;
+  overflow: hidden;
+}
+/* .expand-enter defines the starting state for entering */
+/* .expand-leave defines the ending state for leaving */
+.expand-enter, .expand-leave {
+  height: 0;
+  padding: 0 10px;
+  opacity: 0;
 }
 /*portfolio*/
 .slider {
@@ -228,7 +238,7 @@ h4.project-outline {
     display: flex;
     flex-direction: column;
 }
-/*portfolio2*/
+/*portfolio*/
 h2  {
     font-size:40px;
 }
@@ -286,6 +296,7 @@ h2  {
     background: rgba(0,0,0,0.8);
     opacity:0;
     cursor:pointer;
+    transition:0.3s ease all;
 }
 .hover-item button {
     background: none;
@@ -344,12 +355,6 @@ h2  {
     .portfolio-item {
         width:45%;
     }
-    .footer-inner {
-        flex-direction:row;
-    }
-    .footer-inner a {
-        width:50%;
-    }
     .nav-links a {
         display: inline;
         padding-bottom: 0;
@@ -366,6 +371,7 @@ h2  {
     .jumbo-center {
         height:70vh;
     }
+
 }
 @media screen and (max-height:500px) {
     .jumbo-center {
@@ -383,23 +389,23 @@ h2  {
     .project-scope {
         width:50%;
     }
-    section#about p, section#about a {
-        width: 60%;
-    }
-    .left {
-        width: 50%;
-    }
-    .slick-prev {
-        left:25px !important;
-        z-index:90000;
-    }
-
-    .slick-next {
-        right:25px !important;
-        z-index:90000;
-    }
     .project-images img {
         width:80%;
+    }
+
+}
+@media screen and (min-width:900px) {
+    a.text-center {
+        text-align: center;
+    }
+    a.text-right {
+        text-align: right;
+    }
+    .footer-inner {
+        flex-direction:row;
+    }
+    .footer-inner a {
+        width:33%;
     }
 
 }
